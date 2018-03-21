@@ -2,18 +2,19 @@ private void Executar_ExecuteCode(object sender, System.EventArgs args)
 {
    for(int f = 0; f < this.DataSet.Tables[0].Rows.Count; f++)
     {
-        var codcoligada    = this.DataSet.Tables[0].Rows[f]["CODCOLIGADA"].ToString();
-        var codfilial      = this.DataSet.Tables[0].Rows[f]["CODFILIAL"].ToString();
-        var codturma    = this.DataSet.Tables[0].Rows[f]["CODTURMA"].ToString();
+        var codcoligada    		= this.DataSet.Tables[0].Rows[f]["CODCOLIGADA"].ToString();
+        var codfilial      		= this.DataSet.Tables[0].Rows[f]["CODFILIAL"].ToString();
+        var codturma    		= this.DataSet.Tables[0].Rows[f]["CODTURMA"].ToString();
         var idhabilitacaofilial = this.DataSet.Tables[0].Rows[f]["IDHABILITACAOFILIAL"].ToString();
-		var datainicial = this.DataSet.Tables[0].Rows[f]["DTINICIAL"].ToString();
-		var datafinal = this.DataSet.Tables[0].Rows[f]["DTFINAL"].ToString();
+		var datainicial 		= this.DataSet.Tables[0].Rows[f]["DTINICIAL"].ToString();
+		var datafinal 			= this.DataSet.Tables[0].Rows[f]["DTFINAL"].ToString();
         //throw new System.Exception(codcoligada.ToString() + '-' + idhorarioturma.ToString()+ '-' + codfilial.ToString() + '-' + idturmadisc.ToString());    
-        AtualizarRegistro(this.DataSet,new object[]{codcoligada,codfilial,codturma,idhabilitacaofilial},SqlUpdateSala());
+        //AtualizarRegistro(this.DataSet,new object[]{codcoligada,codfilial,codturma,idhabilitacaofilial,datainicial,datafinal},SqlUpdateSala());
     //throw new System.Exception(codcoligada.ToString() + '-' + idhorarioturma.ToString()+ '-' + codfilial.ToString() + '-' + idturmadisc.ToString());    
-    }
+	    ExibirDadosDataSet(this.DataSet);
+   }
 }
-public System.Text.StringBuilder sql { get; set; }
+/*public System.Text.StringBuilder sql { get; set; }
 
 public void AtualizarRegistro(System.Data.DataSet DS, object[] parametros, string sql)
 {
@@ -28,7 +29,7 @@ public string SqlUpdateSala()
     System.Text.StringBuilder sql = new System.Text.StringBuilder();
     sql.AppendLine("UPDATE SHORARIOTURMA SET CODTIPOSALA = '6' WHERE CODCOLIGADA = :codcoligada AND CODFILIAL = :codfilial AND IDTURMADISC = :idturmadisc AND IDHORARIOTURMA = :idhorarioturma \r\t");
     return sql.ToString();
-}
+}*/
 public void Mensagem(string msg)
 {
     throw new System.Exception(msg);
