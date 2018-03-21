@@ -32,9 +32,9 @@ SELECT
 		'Sábado' 
 	END 'Dia da Semana',
 	PP.NOME 'Instrutor',
-	SPA.CONTEUDO 'Conteúdo Previsto',
-	SPA.CONTEUDOEFETIVO 'Conteúdo Realizado',
-	SPA.OBSERVACAO 'Observação',
+	--SPA.CONTEUDO 'Conteúdo Previsto',
+	--SPA.CONTEUDOEFETIVO 'Conteúdo Realizado',
+	--SPA.OBSERVACAO 'Observação',
 	SH.HORAINICIAL 'Hora inicial',
 	SH.HORAFINAL 'Hora final',
 	SHT.DATAINICIAL 'Data inicial', 
@@ -102,6 +102,6 @@ INNER JOIN
 WHERE
    SHT.CODCOLIGADA= 3
   --AND SHT.IDTURMADISC= '13086'
-  AND SPT.CODPROF = '207'
-  AND SHT.DATAINICIAL BETWEEN '2018-01-03' AND '2018-31-03'
+  AND SPT.CODPROF = '19234'
+  AND SHT.DATAINICIAL BETWEEN '2018-01-02' AND '2018-28-02'
  ) TAB
